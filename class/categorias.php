@@ -10,21 +10,23 @@ class Categoria {
         $db= new Data_base("mysql","myproyecto","127.0.0.1","root","root");
    
         // $this->db=$db;
-        if ($id != null) {
+        
             $categoriasExistentes = $db -> select("categorias");
             // $response = $db -> select("categorias", "id=?", array($id));
             foreach ($categoriasExistentes as $categoria) {
-                if ($categoria['ID'] == $id) {
+                if ($categoria['Categoria'] == $nombre && $nombre != null) {
                     $this -> id = $categoria['ID'];
                     $this -> nombre = $categoria['Categoria'];
                     $this -> exists = true;
                     echo "ya existe";
                 }
-            }}
-            else {$this->nombre = $nombre; $this->id=null; $this -> db=$db;
+                }
+                if(!$this->exists){
+                    $this->nombre = $nombre; $this->id=$id; $this -> db=$db;}
+                }
         
-            }
-    }
+            
+    
     
     public function getNombre() {
         echo $this -> nombre;
@@ -32,19 +34,19 @@ class Categoria {
    
     public function guardar(){
         
-        try{$this->db->insert("categorias",array("categoria"),array($this->nombre));
-       }catch(Exception $e){
-           echo $e->getMessage();}
+       
        
        
         if(!$this->exists){
-            
+            try{$this->db->insert("categorias",array("categoria"),array($this->nombre));
+            }catch(Exception $e){
+                echo $e->getMessage();}
         } else{
             echo "Ya existe la categoria en la base de datos";
         }
     }
     public function eliminar(){
-        $this->db->delete("categorias","categoria",$this->id);
+        $this->db->delete("Categorias","ID",$this->id);
     }
     static public function select(){
         $db= new Data_base("mysql","myproyecto","127.0.0.1","root","root");

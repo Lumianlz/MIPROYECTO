@@ -34,7 +34,7 @@ class Data_base
         $resource = $this->gdb->prepare($sql);
         $arr_prepare = $values;
         print_r($arr_prepare);
-        echo $sql;
+        
         if ($resource->execute($arr_prepare)) {
             echo "<br> se guardo en la Base, by dbclass";
         } else {
