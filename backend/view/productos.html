@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <link rel="stylesheet" href="../Assets/css/style.css" type="text/css"/>
+
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form  method="post" action="../productos.php" enctype="multipart/form-data" class="form" id="productoForm">
+            <input type="hidden" name="action" value="guardar">
+            <label for="nombreProducto" >Nombre del producto</label>
+            <br>
+            <input required type="text"  Id="nombreProducto" name="NombreProducto">
+            <br>
+            <label for="ImagenDeProductoInput">Imagen del producto</label>
+            <input type="file" name ="ImagenDeProductoInput" id="ImagenDeProductoInput">
+            <br>  
+            <label for ="DescripcionProductoInput">Descripcion</label>
+            <br>
+            <textarea Id="DescripcionProductoInput" name="descripcion" cols="30" rows="10"></textarea>
+            <br> 
+            <label  for="precioProductoInput"  >Precio</label>
+            <br>
+            <input required type="number" name="Precio" id="precioProductoInput">
+            <br> 
+            <label for="categoriaSelectInput">Selecciona una Categoria</label>
+            <br>
+            <select Id="categoriaSelectInput"  name="categorias" required>
+                  
+                 
+                 <option></option>
+                 <option value="categoriaA">Categoria A</option>
+                 <option value="categoriaB">Categoria B</option>
+                 <option value="CategoriaC">Categoria C</option>
+            </select>
+            <br> 
+            <input type="submit"  id="submitProductos">
+            <input type="button" value="Cancelar">
+            <br>
+            <p class="miNombre">Luciano Damian Lopez</p>
+    </form>
+    <a href="../index.php">Home</a>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+         <script src="../Assets/js/validaciones.js"></script>
+    </body>
+</html>
