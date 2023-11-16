@@ -1,5 +1,5 @@
 <?php
-
+/*@autor Luciano Lopez`*/
 class Autoload{
     public static function autoload($class){
         $array_clases=array();

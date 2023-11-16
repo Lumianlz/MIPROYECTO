@@ -8,8 +8,6 @@ class Productos {
     private $categoria;
     private $db;
     private $id;
-    
-
   public function __construct($nombre, $imagen, $descripcion, $categoria, $precio,$id=null) {    
     $db= new Data_base("mysql","myproyecto","127.0.0.1","root","root");
     $this->db=$db;
@@ -22,9 +20,7 @@ class Productos {
   }
   public function guardar() {
       $values= array($this->nombre,$this->precio,$this->descripcion,$this->imagen,$this->categoria); 
-      $this->db->insert("productos",array("producto","precio",'descripcion','imagen','categoria_id'),$values);
-      
-      
+      $this->db->insert("productos",array("producto","precio",'descripcion','imagen','categoria_id'),$values); 
   }
  static public function select() {
     $db= new Data_base("mysql","myproyecto","127.0.0.1","root","root");

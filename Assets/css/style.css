@@ -9,12 +9,11 @@ body{
     background-position: center;
     background-attachment: fixed;
     background-size: 100%;
-
- 
+    color: #fff;
 }
 
 .form{
-    color:white;
+    color:#fff;
     width: 400px;
     padding:10px;
     background-image:url();
@@ -25,7 +24,6 @@ body{
     position:relative;
     margin: auto;
     box-shadow: 0px 4px  4px 1px  #000000;
-   
 }
 input, textarea{
     border: solid 1px #fff;
@@ -42,6 +40,19 @@ input, textarea{
     text-align: center;
     display: block;
     margin-top:10px;
-    
-  
+}
+
+.table{
+    width: 100%;
+    border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 20px;
+ 
+}
+.columListaProductos{
+    border: solid 1px #000;
+    padding: 5px;
+    border-radius: 20px;
 }

@@ -1,4 +1,5 @@
 <?php
+/*@autor Luciano Lopez`*/
 include '../class/autoload.php';
 
 if (isset($_POST['action']) && $_POST['action'] == 'guardar'){
@@ -9,10 +10,10 @@ if (isset($_POST['action']) && $_POST['action'] == 'guardar'){
     $categoriaProducto= $_POST['categorias'];
     $nuevoProducto = new Productos($nombreProducto,$imagenProducto,$descripcionProducto,$categoriaProducto,$precioProducto);
     $nuevoProducto -> guardar();
-    // if (!$respuesta) {
-    //     header("Location: ./view/productos.php");
+    if (!$respuesta) {
+        header("Location: ./view/productos.html");
         
-    // }
+    }
 }
 if (isset($_GET['listaProductos'])=="lista") {
     include './view/productos.html';

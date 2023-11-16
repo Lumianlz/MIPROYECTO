@@ -9,7 +9,7 @@ class Data_base
             $gdb = new PDO($typeDataBase . ":dbname=" . $nameDB . ";host=" . $host, $user, $password);
 
             $this->gdb = $gdb;
-            echo 'conectado';
+          
         } catch (PDOException $e) {
             echo 'fallos la conexio' . $e->getMessage();
         }
@@ -73,7 +73,6 @@ class Data_base
         $resource->execute($arr_prepare);
 
         if ($resource) {
-            echo '<br> se realizo la consulta';
             return $resource->fetchAll(PDO::FETCH_ASSOC);
         } else {
             echo '<pre>';
